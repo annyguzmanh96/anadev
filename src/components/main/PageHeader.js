@@ -14,15 +14,7 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   overflow: hidden;
-  background: rgb(255, 102, 196);
-  background: linear-gradient(
-    20deg,
-    #ffcceb 0%,
-    rgba(205, 179, 229, 1) 20%,
-    rgba(166, 153, 194, 1) 50%,
-    #b7cbf0 80%,
-    #b7cfb0 100%
-  );
+  background: linear-gradient(to bottom, #ffa3a1, #ffbdbe, #ffd6d6, #fff1f1);
   height: 100vh;
 
   @media (max-width: 768px) {
@@ -60,6 +52,7 @@ const Image = styled.img`
   image-rendering: optimizequality;
   image-rendering: -webkit-optimize-contrast;
   cursor: pointer;
+  box-shadow: inset 0px -10px 0px -5px #ffa3a1;
 `;
 
 const ImageWrapper = styled.div`
@@ -87,12 +80,12 @@ const Title = styled(Typography)`
 
 const TextContainer = styled.div`
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 69%;
   transform: translate(-50%, -50%);
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 0.2s ease-in-out;
-  background-color: rgba(205, 179, 229, 1);
+  background-color: #fff1f1;
   border-radius: 10px;
   max-width: 70%;
   padding: 10px;
@@ -105,7 +98,7 @@ const TextContainer = styled.div`
     height: 0;
     width: 0;
     border: 15px solid transparent;
-    border-right-color: rgba(205, 179, 229, 1);
+    border-right-color: #fff1f1;
     border-left: 0;
     border-top: 0;
     transform: translateY(-20%);
@@ -114,7 +107,7 @@ const TextContainer = styled.div`
 
 const Text = styled.p`
   font-size: 1.5rem;
-  color: white;
+  color: #293437;
 `;
 
 function PageHeader() {
@@ -132,7 +125,7 @@ function PageHeader() {
                   fontFamily: "Permanent Marker, cursive",
                   fontWeight: "400",
                   color: "#ffffff",
-                  fontSize: "4rem",
+                  fontSize: "5rem",
                 }}
                 gutterBottom
                 className="animate__animated animate__swing"
@@ -145,7 +138,7 @@ function PageHeader() {
                     style={{
                       fontFamily: "Lobster Two, cursive",
                       fontWeight: "400",
-                      fontSize: "2em",
+                      fontSize: "2.5em",
                       color: "#293437",
                     }}
                     className="animate__animated animate__lightSpeedInRight"
