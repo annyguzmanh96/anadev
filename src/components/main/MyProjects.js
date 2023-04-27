@@ -10,6 +10,7 @@ import Project3 from ".././../assets/png/project3.PNG";
 import Project4 from ".././../assets/png/project4.PNG";
 import Project5 from ".././../assets/png/project5.PNG";
 import Project6 from ".././../assets/png/project6.PNG";
+import Project7 from ".././../assets/png/project7.PNG";
 
 const Wrapper = styled.div`
   ${spacing};
@@ -111,9 +112,14 @@ function MyProjects() {
             link={"https://metfin-web.web.app/"}
           />
           <Project
-            title="Weather Website"
-            img={Project4}
-            link={"https://github.com/annyguzmanh96/app-clima"}
+            title="Maternidad Paso a Paso Website"
+            img={Project6}
+            link={"https://aprendedigital.pro/maternidad-paso-paso/"}
+          />
+          <Project
+            title="BBSC Website"
+            img={Project7}
+            link={"https://www.bbsc.cl/"}
           />
           <Project
             title="Movies App"
@@ -121,9 +127,9 @@ function MyProjects() {
             link={"https://github.com/annyguzmanh96/movies-app"}
           />
           <Project
-            title="BBSC Website"
-            img={Project6}
-            link={"https://www.bbsc.cl/"}
+            title="Weather Website"
+            img={Project4}
+            link={"https://github.com/annyguzmanh96/app-clima"}
           />
         </Grid>
       </Container>

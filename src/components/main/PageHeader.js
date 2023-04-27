@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   text-align: center;
   overflow: hidden;
   background: linear-gradient(to bottom, #ffa3a1, #ffbdbe, #ffd6d6, #fff1f1);
-  height: 100vh;
+  height: 100%;
 
   @media (max-width: 768px) {
     height: auto;
@@ -45,28 +45,13 @@ const Content = styled.div`
 
 const Image = styled.img`
   max-width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  display: flex;
   z-index: 0;
-  position: relative;
   image-rendering: optimizequality;
   image-rendering: -webkit-optimize-contrast;
   cursor: pointer;
   box-shadow: inset 0px -10px 0px -5px #ffa3a1;
-`;
-
-const ImageWrapper = styled.div`
-  &:before {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    content: " ";
-    z-index: 1;
-    display: block;
-    width: 50%;
-    height: 50%;
-    pointer-events: none;
-  }
 `;
 
 const Title = styled(Typography)`
@@ -151,32 +136,28 @@ function PageHeader() {
             </Content>
           </Grid>
         </Grid>
-        <Grid container alignItems="center" justifyContent="center" spacing={4}>
-          <Grid item xs={12} sm={10} md={9} lg={9}>
-            <ImageWrapper>
-              <Image
-                alt="bitmoji-ana"
-                onMouseOver={() => {
-                  setHello(true);
-                  setShowText(true);
-                }}
-                onMouseOut={() => {
-                  setHello(false);
-                  setShowText(false);
-                }}
-                src={hello ? AnaHola2 : AnaHola1}
-                onClick={() => {
-                  window.open(
-                    "https://www.linkedin.com/in/ana-mar%C3%ADa-guzm%C3%A1n-hoyos-486704159/"
-                  );
-                }}
-              />
-              <TextContainer show={showText}>
-                <Text>Click on my bitmoji and see my profile on Linkedin</Text>
-              </TextContainer>
-            </ImageWrapper>
-          </Grid>
+        <Grid container justifyContent="center">
+          <Image
+            alt="bitmoji-ana"
+            onMouseOver={() => {
+              setHello(true);
+              setShowText(true);
+            }}
+            onMouseOut={() => {
+              setHello(false);
+              setShowText(false);
+            }}
+            src={hello ? AnaHola2 : AnaHola1}
+            onClick={() => {
+              window.open(
+                "https://www.linkedin.com/in/ana-mar%C3%ADa-guzm%C3%A1n-hoyos-486704159/"
+              );
+            }}
+          />
         </Grid>
+        <TextContainer show={showText}>
+          <Text>Click on my bitmoji and see my profile on Linkedin</Text>
+        </TextContainer>
       </AllContainer>
     </Wrapper>
   );
