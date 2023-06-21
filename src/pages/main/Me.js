@@ -4,6 +4,9 @@ import PageHeader from "../../components/main/PageHeader";
 import Footer from "../../components/main/Footer";
 import MyProjects from "../../components/main/MyProjects";
 import MySkills from "../../components/main/MySkills";
+import WhatsAppBottom from "../../components/WhatsAppBottom";
+import CvBottom from "../../components/CvBottom";
+import SkillsBars from "../../components/main/SkillsBars";
 
 export default function Me() {
   useEffect(() => {
@@ -27,8 +30,11 @@ export default function Me() {
 
   return (
     <div>
+      <CvBottom />
+      <WhatsAppBottom />
       <PageHeader />
       <MySkills />
+      <SkillsBars />
       <MyProjects />
       <Footer />
     </div>

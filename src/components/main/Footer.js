@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Box, Container, Typography } from "@mui/material";
 import { spacing } from "@mui/system";
+import usePixelPerfect from "../../hooks/usePixelPerfect";
 
 const Wrapper = styled.div`
   ${spacing};
@@ -9,6 +10,7 @@ const Wrapper = styled.div`
 `;
 
 function Footer() {
+  const { PP } = usePixelPerfect();
   return (
     <Wrapper py={1}>
       <Container>
@@ -20,8 +22,11 @@ function Footer() {
         >
           <Typography
             color="#fff"
-            variant="h4"
-            style={{ fontFamily: "Vazirmatn, sans-serif", cursor: "pointer" }}
+            style={{
+              fontFamily: "Vazirmatn, sans-serif",
+              cursor: "pointer",
+              fontSize: `${PP(30)}`,
+            }}
           >
             <span
               style={{

@@ -11,11 +11,14 @@ import MaterialUI from ".././../assets/svg/material-ui.svg";
 import Figma from ".././../assets/svg/figma.svg";
 import Firebase from ".././../assets/svg/firebase.svg";
 import Css from ".././../assets/png/css.png";
+import PPD from "../../utils/PPD";
+import usePixelPerfect from "../../hooks/usePixelPerfect";
 
 const Wrapper = styled.div`
   ${spacing};
   text-align: center;
   background: #fff1f1;
+  padding-top: ${PPD(100)};
 `;
 
 const ToolIcon = styled.img`
@@ -26,20 +29,21 @@ const ToolIcon = styled.img`
 const Tool = styled.div`
   background-color: #facdcc;
   display: inline-block;
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin: 10px;
+  padding: ${PPD(12)} ${PPD(16)};
+  border-radius: ${PPD(10)};
+  margin: ${PPD(25)};
 `;
 
 function MySkills() {
+  const { PP } = usePixelPerfect();
   return (
-    <Wrapper py={20}>
+    <Wrapper py={2}>
       <Container>
         <Typography
           style={{
             fontFamily: "Lobster Two, cursive",
             fontWeight: "500",
-            fontSize: "3em",
+            fontSize: `${PP(48)}`,
             color: "#293437",
           }}
           className="scroll-reveal"
@@ -54,7 +58,7 @@ function MySkills() {
               <ToolIcon
                 alt="React"
                 src={React}
-                style={{ height: "34px", margin: "3px 0" }}
+                style={{ height: `${PP(34)}`, margin: `${PP(3)} 0` }}
               />
             </Tool>
           </Tooltip>
@@ -63,7 +67,7 @@ function MySkills() {
               <ToolIcon
                 alt="Typescript"
                 src={Typescript}
-                style={{ height: "40px" }}
+                style={{ height: `${PP(40)}` }}
               />
             </Tool>
           </Tooltip>
@@ -72,7 +76,7 @@ function MySkills() {
               <ToolIcon
                 alt="Javascript"
                 src={Javascript}
-                style={{ height: "36px", margin: "2px 0" }}
+                style={{ height: `${PP(36)}`, margin: `${PP(2)} 0` }}
               />
             </Tool>
           </Tooltip>
@@ -81,7 +85,7 @@ function MySkills() {
               <ToolIcon
                 alt="Redux"
                 src={Redux}
-                style={{ height: "34px", margin: "3px 0" }}
+                style={{ height: `${PP(34)}`, margin: `${PP(3)} 0` }}
               />
             </Tool>
           </Tooltip>
@@ -90,7 +94,7 @@ function MySkills() {
               <ToolIcon
                 alt="React-Router-Dom"
                 src={ReactRouterDom}
-                style={{ height: "40px" }}
+                style={{ height: `${PP(40)}` }}
               />
             </Tool>
           </Tooltip>
@@ -99,18 +103,22 @@ function MySkills() {
               <ToolIcon
                 alt="Material-UI"
                 src={MaterialUI}
-                style={{ height: "40px" }}
+                style={{ height: `${PP(40)}` }}
               />
             </Tool>
           </Tooltip>
           <Tooltip title="Css">
             <Tool>
-              <ToolIcon alt="Css" src={Css} style={{ height: "40px" }} />
+              <ToolIcon alt="Css" src={Css} style={{ height: `${PP(40)}` }} />
             </Tool>
           </Tooltip>
           <Tooltip title="Figma">
             <Tool>
-              <ToolIcon alt="Figma" src={Figma} style={{ height: "40px" }} />
+              <ToolIcon
+                alt="Figma"
+                src={Figma}
+                style={{ height: `${PP(40)}` }}
+              />
             </Tool>
           </Tooltip>
           <Tooltip title="Firebase">
@@ -118,7 +126,7 @@ function MySkills() {
               <ToolIcon
                 alt="Firebase"
                 src={Firebase}
-                style={{ height: "40px" }}
+                style={{ height: `${PP(40)}` }}
               />
             </Tool>
           </Tooltip>

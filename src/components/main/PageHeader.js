@@ -7,6 +7,8 @@ import "animate.css";
 
 import AnaHola1 from ".././../assets/png/anahola1.png";
 import AnaHola2 from ".././../assets/png/anahola2.png";
+import PPD from "../../utils/PPD";
+import usePixelPerfect from "../../hooks/usePixelPerfect";
 
 const Typography = styled(MuiTypography)(spacing);
 
@@ -19,7 +21,7 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     height: auto;
-    padding-top: 1rem;
+    padding-top: ${PPD(16)};
   }
 `;
 
@@ -45,7 +47,7 @@ const Content = styled.div`
 
 const Image = styled.img`
   max-width: 100%;
-  height: 100%;
+  height: ${PPD(750)};
   display: flex;
   z-index: 0;
   image-rendering: optimizequality;
@@ -59,7 +61,7 @@ const Title = styled(Typography)`
   line-height: 1.4;
   font-size: 1.75rem;
   @media (min-width: 768px) {
-    font-size: 5rem;
+    font-size: ${PPD(80)};
   }
 `;
 
@@ -71,9 +73,10 @@ const TextContainer = styled.div`
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 0.2s ease-in-out;
   background-color: #fff1f1;
-  border-radius: 10px;
+  border-radius: ${PPD(20)};
+  font-style: italic;
   max-width: 70%;
-  padding: 10px;
+  padding: ${PPD(0.625)};
   z-index: 1;
   &:before {
     content: "";
@@ -82,7 +85,7 @@ const TextContainer = styled.div`
     top: 50%;
     height: 0;
     width: 0;
-    border: 15px solid transparent;
+    border: ${PPD(0.938)} solid transparent;
     border-right-color: #fff1f1;
     border-left: 0;
     border-top: 0;
@@ -91,11 +94,12 @@ const TextContainer = styled.div`
 `;
 
 const Text = styled.p`
-  font-size: 1.5rem;
+  font-size: ${PPD(24)};
   color: #293437;
 `;
 
 function PageHeader() {
+  const { PP } = usePixelPerfect();
   const [hello, setHello] = useState(false);
   const [showText, setShowText] = useState(false);
 
@@ -110,7 +114,7 @@ function PageHeader() {
                   fontFamily: "Permanent Marker, cursive",
                   fontWeight: "400",
                   color: "#ffffff",
-                  fontSize: "5rem",
+                  fontSize: `${PP(80)}`,
                 }}
                 gutterBottom
                 className="animate__animated animate__swing"
@@ -123,7 +127,7 @@ function PageHeader() {
                     style={{
                       fontFamily: "Lobster Two, cursive",
                       fontWeight: "400",
-                      fontSize: "2.5em",
+                      fontSize: `${PP(40)}`,
                       color: "#293437",
                     }}
                     className="animate__animated animate__lightSpeedInRight"

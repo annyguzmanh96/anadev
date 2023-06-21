@@ -1,7 +1,11 @@
 import Me from "./pages/main/Me";
 
 function App() {
-  return <Me />;
+  return (
+    <>
+      <Me />
+    </>
+  );
 }
 
 export default App;

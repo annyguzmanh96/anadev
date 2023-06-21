@@ -11,6 +11,8 @@ import Project4 from ".././../assets/png/project4.PNG";
 import Project5 from ".././../assets/png/project5.PNG";
 import Project6 from ".././../assets/png/project6.PNG";
 import Project7 from ".././../assets/png/project7.PNG";
+import PPD from "../../utils/PPD";
+import usePixelPerfect from "../../hooks/usePixelPerfect";
 
 const Wrapper = styled.div`
   ${spacing};
@@ -30,7 +32,7 @@ const ProjectImage = styled.img`
   display: block;
   box-shadow: 0 4px 12px 0 rgba(18, 38, 63, 0.125);
   transition: 0.15s ease-in-out;
-  border-radius: 4px;
+  border-radius: ${PPD(24)};
   &:hover {
     transform: scale(1.0325);
   }
@@ -38,12 +40,12 @@ const ProjectImage = styled.img`
 
 const ProjectChip = styled(Chip)`
   background-color: #f6433f;
-  border-radius: 5px;
+  border-radius: ${PPD(5)};
   color: white;
   font-size: 55%;
-  height: 18px;
-  margin-top: -16px;
-  padding: 3px 0;
+  height: ${PPD(18)};
+  margin-top: ${PPD(-16)};
+  padding: ${PPD(3)} 0;
   span {
     padding-left: 0px;
     padding-right: 0px;
@@ -51,6 +53,7 @@ const ProjectChip = styled(Chip)`
 `;
 
 const Project = ({ isNew, img, title, link }) => {
+  const { PP } = usePixelPerfect();
   return (
     <Grid item xs={12} sm={6} md={4} lg={4}>
       <ProjectContent px={2}>
@@ -62,7 +65,9 @@ const Project = ({ isNew, img, title, link }) => {
           <ProjectImage alt={` ${title} Project`} src={img} />
         </ProjectLink>
         <Box mb={3} />
-        <Typography variant="h6" style={{ color: "#293437" }}>
+        <Typography
+          style={{ color: "#293437", fontSize: `${PP(30)}`, fontWeight: "500" }}
+        >
           {title} {isNew && <ProjectChip label="Developing" />}
         </Typography>
       </ProjectContent>
@@ -71,14 +76,15 @@ const Project = ({ isNew, img, title, link }) => {
 };
 
 function MyProjects() {
+  const { PP } = usePixelPerfect();
   return (
-    <Wrapper pt={16} pb={20} id="projects">
+    <Wrapper pt={15} pb={20} id="projects">
       <Container>
         <Typography
           style={{
             fontFamily: "Lobster Two, cursive",
             fontWeight: "400",
-            fontSize: "3em",
+            fontSize: `${PP(48)}`,
             color: "#293437",
           }}
           className="scroll-reveal"
@@ -86,7 +92,11 @@ function MyProjects() {
         >
           Take a look at my projects
         </Typography>
-        <Typography variant="h3" color="textSecondary" gutterBottom>
+        <Typography
+          style={{ fontSize: `${PP(30)}`, fontWeight: "500" }}
+          color="textSecondary"
+          gutterBottom
+        >
           Projects developed with: React.js, Typescript, Javascript, Redux
           Toolkit, Formik, Yup, Material-UI, CSS, SASS, Styled-components, Git,
           WordPress.
