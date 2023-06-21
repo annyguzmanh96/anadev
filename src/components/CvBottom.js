@@ -51,10 +51,10 @@ export default function CvBottom() {
         <img
           id="cv-image"
           src={cvIcon}
-          width={`${PP(50)}`}
+          width={`${PP(70)}`}
           style={{
             position: "fixed",
-            bottom: `${PP(110)}`,
+            bottom: `${PP(130)}`,
             right: `${PP(38)}`,
             cursor: "pointer",
             zIndex: 5,

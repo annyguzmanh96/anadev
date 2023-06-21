@@ -47,7 +47,7 @@ export default function WhatsAppBottom() {
         <img
           id="whatsApp-image"
           src={wpIcon}
-          width={`${PP(60)}`}
+          width={`${PP(80)}`}
           style={{
             position: "fixed",
             bottom: `${PP(30)}`,
