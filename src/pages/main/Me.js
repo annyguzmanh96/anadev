@@ -29,7 +29,7 @@ export default function Me() {
   }
 
   return (
-    <div>
+    <>
       <CvBottom />
       <WhatsAppBottom />
       <PageHeader />
@@ -37,6 +37,6 @@ export default function Me() {
       <SkillsBars />
       <MyProjects />
       <Footer />
-    </div>
+    </>
   );
 }

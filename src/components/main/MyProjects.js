@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "@emotion/styled";
-import { Box, Chip, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { spacing } from "@mui/system";
 
 import Project1 from ".././../assets/png/project1.PNG";
@@ -32,23 +32,9 @@ const ProjectImage = styled.img`
   display: block;
   box-shadow: 0 4px 12px 0 rgba(18, 38, 63, 0.125);
   transition: 0.15s ease-in-out;
-  border-radius: ${PPD(24)};
+  border-radius: ${PPD(8)};
   &:hover {
     transform: scale(1.0325);
-  }
-`;
-
-const ProjectChip = styled(Chip)`
-  background-color: #f6433f;
-  border-radius: ${PPD(5)};
-  color: white;
-  font-size: 55%;
-  height: ${PPD(18)};
-  margin-top: ${PPD(-16)};
-  padding: ${PPD(3)} 0;
-  span {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 `;
 
@@ -68,7 +54,7 @@ const Project = ({ isNew, img, title, link }) => {
         <Typography
           style={{ color: "#293437", fontSize: `${PP(30)}`, fontWeight: "500" }}
         >
-          {title} {isNew && <ProjectChip label="Developing" />}
+          {title}
         </Typography>
       </ProjectContent>
     </Grid>
@@ -87,7 +73,6 @@ function MyProjects() {
             fontSize: `${PP(48)}`,
             color: "#293437",
           }}
-          className="scroll-reveal"
           gutterBottom
         >
           Take a look at my projects
