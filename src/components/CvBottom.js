@@ -44,7 +44,7 @@ export default function CvBottom() {
   return (
     <>
       <a
-        href="https://drive.google.com/file/d/1A6ZIMj1_n7olUbXXSf83p-0RsAnoQJpi/view?usp=sharing"
+        href="https://drive.google.com/file/d/1PzDPdGahTgURM4DmXYuBy0XJ61atqzjL/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
       >
